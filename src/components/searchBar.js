@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../services/firebase';
+import { SERVER_PATH } from '../services/Config';
 
 const SearchBar = () => {
   const [searchInput, setSearchInput] = useState('');
@@ -94,7 +95,7 @@ const SearchBar = () => {
     // Handle submit logic here
     // You can access the selected medicines using the selectedMedicines state
     console.log(selectedMedicines);
-    fetch("http://192.168.43.227/fetch?list="+selectedMedicines.toString(), {
+    fetch(SERVER_PATH+"fetch?list="+selectedMedicines.toString(), {
       method: 'get',
       headers: {
         "Access-Control-Allow-Origin": "*"
@@ -105,7 +106,7 @@ const SearchBar = () => {
     })
     .catch(function (error) {
         console.log('Request failed', error);
-    });
+    }); 
   };
 
   const handleSelect = (med) => {

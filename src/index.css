@@ -19,8 +19,11 @@ code {
 .header{
   background: #fff;
   width: 100vw;
-  padding: 1.5em;
+  padding: 1.5em 0 ;
   box-shadow: 1px 4px 8px rgba(0,0,0,.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header h2{
@@ -29,6 +32,28 @@ code {
   text-transform: uppercase;
   color:lightseagreen;
   font-weight: 500;
+  padding-left: 1.5em;
+}
+
+.con-status{
+  margin-right: 1.5em;
+  display: flex;
+  align-items: center;
+  background: #ddd;
+  padding: .5em 1em;
+  border-radius: 15px;
+}
+
+.con-indi{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: red;
+  margin-right: .5em;
+}
+
+.con-txt{
+  text-transform: capitalize;
 }
 
 .medContainer{
@@ -192,4 +217,112 @@ form h2{
   text-transform: uppercase;
 }
 
+/* home styles */
 
+.main-btn-container{
+  margin:auto;
+  margin-top:4em;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:#bbbbbb;
+}
+
+.main-btn{
+  padding: 1em 2em;
+  background: lightseagreen;
+  width: 60%;
+  margin-bottom: 1em;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 700;
+  color:#fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.main-btn:hover{
+  background: #fff;
+  color:rgb(18, 20, 20);
+  border:1px solid lightseagreen;
+}
+
+/* control page styles */
+
+.ctrl-command{
+  width: 310px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+  background: blue;
+  text-transform: capitalize;
+  margin-bottom: 1em;
+}
+
+.control-container{
+  width: 90%;
+  margin: auto;
+  margin-top: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: magenta; */
+}
+
+.ctrl-container-left{
+  width: 40%;
+}
+
+.ctrl-container-right{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+}
+
+.img-container{
+  background: #ddd;
+  width: 100%;
+  height: 400px;
+}
+
+.ctrls{
+  display: flex;
+  height: 320px;
+  width: 320px;
+  /* background: magenta; */
+}
+
+.ctrls-right, .ctrls-left{
+  width: 50%;
+}
+
+.ctrl-btn{
+  background: #ddd;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+}
+
+.ctrls-left .ctrl-btn{
+  height: 100px;
+}
+
+.ctrls-right .ctrl-btn{
+  height: 320px;
+  margin: 0;
+}
+
+.ctrl-btn:hover{
+  background: rgb(177, 177, 177);
+}

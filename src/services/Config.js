@@ -1,0 +1,1 @@
+export const SERVER_PATH = "http://192.168.1.111/";
