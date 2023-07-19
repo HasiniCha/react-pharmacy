@@ -1,4 +1,4 @@
-import { faCaretDown, faCaretUp, faHand, faStop } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faCaretUp, faClose, faHand, faStop } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { SERVER_PATH } from '../services/Config'
@@ -6,15 +6,15 @@ import { SERVER_PATH } from '../services/Config'
 const Control = () => {
     const [command, setCommand] = useState("Please enter a command");
     const testCommand = (cmd) => {
-        if(command == "TSTFORWARD")
+        if(cmd == "TSTFORWARD")
             setCommand("Moving forward");
-        else if(command == "TSTREVERS")
+        else if(cmd == "TSTREVERSE")
             setCommand("Moving Backwards");
-        else if(command == "TSTSTOP")
+        else if(cmd == "TSTSTOP")
             setCommand("Cart stopped");
-        else if(command == "TSTGRAB")
+        else if(cmd == "TSTGRAB")
             setCommand("Grabbing an Object")
-        fetch(SERVER_PATH+"fetch?test="+cmd, {
+        fetch(SERVER_PATH+"test?cmd="+cmd, {
         method: 'get',
             headers: {
               "Access-Control-Allow-Origin": "*"
@@ -45,12 +45,12 @@ const Control = () => {
                         <FontAwesomeIcon icon={faCaretUp} size="2x"/>
                     </div>
                     <div className='ctrl-btn' onClick={()=>{
-                        testCommand("TSTREVERSE");
+                        testCommand("TSTSTOP");
                     }}>
                         <FontAwesomeIcon icon={faStop} size="2x"/>
                     </div>
                     <div className='ctrl-btn' onClick={()=>{
-                        testCommand("TSTSTOP");
+                        testCommand("TSTREVERSE");
                     }}>
                         <FontAwesomeIcon icon={faCaretDown} size="2x"/>
                     </div>
@@ -61,6 +61,11 @@ const Control = () => {
                     }}>
                         <FontAwesomeIcon icon={faHand} size="2x"/>
                     </div>
+                </div>
+                <div className='ctrl-btn' onClick={()=>{
+                    testCommand("TSTEXIT");
+                }}>
+                    <FontAwesomeIcon icon={faClose} size="2x"/>
                 </div>
             </div>
         </div>

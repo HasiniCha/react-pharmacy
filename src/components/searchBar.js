@@ -94,7 +94,6 @@ const SearchBar = () => {
   const handleSubmit = () => {
     // Handle submit logic here
     // You can access the selected medicines using the selectedMedicines state
-    console.log(selectedMedicines);
     fetch(SERVER_PATH+"fetch?list="+selectedMedicines.toString(), {
       method: 'get',
       headers: {
