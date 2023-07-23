@@ -1,4 +1,4 @@
-import { faCaretDown, faCaretUp, faClose, faHand, faStop } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faCaretLeft, faCaretRight, faCaretUp, faClose, faHand, faStop } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { SERVER_PATH } from '../services/Config'
@@ -31,18 +31,25 @@ const Control = () => {
   return (
     <div className='control-container'>
         <div className='ctrl-container-left'>
-            <div className='img-container'></div>
+            {/* <div className='img-container'></div> */}
         </div>
         <div className='ctrl-container-right'>
             <div className='ctrl-command'>
                 {command}
             </div>
             <div className='ctrls'>
-                <div className='ctrls-left'>
+                <div className='ctrls-row'>
                     <div className='ctrl-btn' onClick={()=>{
                         testCommand("TSTFORWARD");
                     }}>
                         <FontAwesomeIcon icon={faCaretUp} size="2x"/>
+                    </div>
+                </div>
+                <div className='ctrls-row'>
+                    <div className='ctrl-btn' onClick={()=>{
+                        testCommand("TSTLEFT");
+                    }}>
+                        <FontAwesomeIcon icon={faCaretLeft} size="2x"/>
                     </div>
                     <div className='ctrl-btn' onClick={()=>{
                         testCommand("TSTSTOP");
@@ -50,22 +57,17 @@ const Control = () => {
                         <FontAwesomeIcon icon={faStop} size="2x"/>
                     </div>
                     <div className='ctrl-btn' onClick={()=>{
+                        testCommand("TSTRIGHT");
+                    }}>
+                        <FontAwesomeIcon icon={faCaretRight} size="2x"/>
+                    </div>
+                </div>
+                <div className='ctrls-row'>
+                    <div className='ctrl-btn' onClick={()=>{
                         testCommand("TSTREVERSE");
                     }}>
                         <FontAwesomeIcon icon={faCaretDown} size="2x"/>
                     </div>
-                </div>
-                <div className='ctrls-right'>
-                <div className='ctrl-btn' onClick={()=>{
-                        testCommand("TSTGRAB");
-                    }}>
-                        <FontAwesomeIcon icon={faHand} size="2x"/>
-                    </div>
-                </div>
-                <div className='ctrl-btn' onClick={()=>{
-                    testCommand("TSTEXIT");
-                }}>
-                    <FontAwesomeIcon icon={faClose} size="2x"/>
                 </div>
             </div>
         </div>
