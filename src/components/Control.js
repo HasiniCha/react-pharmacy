@@ -31,10 +31,7 @@ const Control = () => {
   return (
     <div className='control-container'>
         <div className='ctrl-container-left'>
-            {/* <div className='img-container'></div> */}
-        </div>
-        <div className='ctrl-container-right'>
-            <div className='ctrl-command'>
+        <div className='ctrl-command'>
                 {command}
             </div>
             <div className='ctrls'>
@@ -68,6 +65,22 @@ const Control = () => {
                     }}>
                         <FontAwesomeIcon icon={faCaretDown} size="2x"/>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div className='ctrl-container-right'>
+            <div className='ctrls-row'>
+                <div className='ctrl-btn' onClick={()=>{
+                    testCommand("TSTGRAB");
+                }}>
+                    <FontAwesomeIcon icon={faHand} size="2x"/>
+                </div>
+            </div>
+            <div className='ctrls-row'>
+                <div className='ctrl-btn' onClick={()=>{
+                    testCommand("TSTEXIT");
+                }}>
+                    <FontAwesomeIcon icon={faClose} size="2x"/>
                 </div>
             </div>
         </div>

@@ -274,11 +274,11 @@ form h2{
 }
 
 .ctrl-container-left{
-  width: 40%;
+  width: 50%;
 }
 
 .ctrl-container-right{
-  width: 60%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
